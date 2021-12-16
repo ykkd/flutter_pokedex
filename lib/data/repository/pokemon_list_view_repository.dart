@@ -1,6 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:pokedex/data/model/model/result.dart';
-import 'package:pokedex/data/model/view/pokemon_list_view.dart';
+import 'package:pokedex/model/model/result.dart';
+import 'package:pokedex/model/view/pokemon_list_view.dart';
 import 'package:pokedex/data/remote/api_client.dart';
 
 final pokemonListViewRepositoryProvider =

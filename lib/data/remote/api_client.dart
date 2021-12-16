@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:pokedex/data/model/view/pokemon_list_view.dart';
+import 'package:pokedex/model/view/pokemon_list_view.dart';
 import 'package:retrofit/http.dart';
 
 part 'api_client.g.dart';
