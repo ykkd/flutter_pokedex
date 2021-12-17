@@ -1,16 +1,20 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:pokedex/data/remote/response/pokemon_response.dart';
 
-part 'pokemon.g.dart';
-
-@JsonSerializable(explicitToJson: true)
 class Pokemon {
   String name;
   String url;
 
-  Pokemon({required this.name, required this.url});
+  Pokemon(this.name, this.url);
 
-  factory Pokemon.fromJson(Map<String, dynamic> json) =>
-      _$PokemonFromJson(json);
+  factory Pokemon.transform(PokemonResponse pokemonResponse) {
+    return Pokemon(pokemonResponse.name, pokemonResponse.url);
+  }
 
-  Map<String, dynamic> toJson() => _$PokemonToJson(this);
+  int get id => int.parse(url.substring(
+      "https://pokeapi.co/api/v2/pokemon/".length, url.length - 1));
+
+  String get thumbnailImageUrl =>
+      "https://github.com/fanzeyi/pokemon.json/blob/master/thumbnails/" +
+      id.toString().padLeft(3, '0') +
+      ".png?raw=true";
 }

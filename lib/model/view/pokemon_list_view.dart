@@ -1,16 +1,13 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:pokedex/data/remote/response/pokemon_list_response.dart';
 import 'package:pokedex/model/model/pokemon.dart';
 
-part 'pokemon_list_view.g.dart';
-
-@JsonSerializable(explicitToJson: true)
 class PokemonListView {
   List<Pokemon> pokemons;
 
-  PokemonListView({required this.pokemons});
+  PokemonListView(this.pokemons);
 
-  factory PokemonListView.fromJson(Map<String, dynamic> json) =>
-      _$PokemonListViewFromJson(json);
-
-  Map<String, dynamic> toJson() => _$PokemonListViewToJson(this);
+  factory PokemonListView.transform(PokemonListResponse pokemonListResponse) {
+    return PokemonListView(
+        pokemonListResponse.results.map((e) => Pokemon.transform(e)).toList());
+  }
 }
