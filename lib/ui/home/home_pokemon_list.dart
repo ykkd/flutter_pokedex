@@ -1,7 +1,7 @@
 import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:pokedex/model/model/pokemon.dart';
 import 'package:logger/logger.dart';
+import 'package:pokedex/model/model/pokemon.dart';
 
 class PokemonList extends StatelessWidget {
   final List<Pokemon> pokemons;
