@@ -16,18 +16,18 @@ class _ApiClient implements ApiClient {
   String? baseUrl;
 
   @override
-  Future<PokemonListView> pokemonList() async {
+  Future<PokemonListResponse> pokemonList() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<PokemonListView>(
+        _setStreamType<PokemonListResponse>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/pokemon',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = PokemonListView.fromJson(_result.data!);
+    final value = PokemonListResponse.fromJson(_result.data!);
     return value;
   }
 

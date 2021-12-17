@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:pokedex/model/view/pokemon_list_view.dart';
+import 'package:pokedex/data/remote/response/pokemon_list_response.dart';
 import 'package:retrofit/http.dart';
 
 part 'api_client.g.dart';
@@ -14,5 +14,5 @@ abstract class ApiClient {
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
   @GET("/pokemon")
-  Future<PokemonListView> pokemonList();
+  Future<PokemonListResponse> pokemonList();
 }
