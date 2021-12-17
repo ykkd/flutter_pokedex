@@ -40,6 +40,9 @@ dependencies:
   flutter_hooks: ^0.18.1
   hooks_riverpod: ^1.0.2
   state_notifier: ^0.7.1
+  google_fonts: ^2.1.0
+  basic_utils: ^3.9.3
+  logger: ^1.1.0
 
 
   # The following adds the Cupertino Icons font to your application.
