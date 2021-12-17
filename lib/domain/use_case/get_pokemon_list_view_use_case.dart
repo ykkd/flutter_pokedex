@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:pokedex/model/model/result.dart';
-import 'package:pokedex/model/view/pokemon_list_view.dart';
+import 'package:pokedex/data/remote/response/result.dart';
 import 'package:pokedex/data/repository/pokemon_list_view_repository.dart';
+import 'package:pokedex/model/view/pokemon_list_view.dart';
 
 final getPokemonListViewUseCase =
     Provider((ref) => GetPokemonListViewUseCaseImpl(ref.read));
