@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:logger/logger.dart';
 import 'package:pokedex/domain/use_case/get_pokemon_list_view_use_case.dart';
 import 'package:pokedex/model/view/pokemon_list_view.dart';
 
@@ -22,7 +23,7 @@ class HomeViewModel extends ChangeNotifier {
       value.when(success: (data) {
         _pokemonListView = data;
       }, failure: (error) {
-        // Todo
+        Logger().e(error.message);
       });
     }).whenComplete(() {
       notifyListeners();
