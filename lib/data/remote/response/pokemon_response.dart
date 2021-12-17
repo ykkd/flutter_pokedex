@@ -1,5 +1,8 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'pokemon_response.g.dart';
 
+@JsonSerializable()
 class PokemonResponse {
   String name;
   String url;
