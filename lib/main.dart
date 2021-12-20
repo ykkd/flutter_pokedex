@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:pokedex/ui/home/home_page.dart';
+import 'package:pokedex/ui/route/app_route.dart';
 import 'package:pokedex/ui/theme/app_theme.dart';
 
 void main() {
@@ -12,9 +13,11 @@ class MyApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp(
+    final appRouter = useMemoized(() => AppRouter());
+    return MaterialApp.router(
         title: 'Pokedex',
         theme: ref.watch(appThemeProvider).data,
-        home: const HomePage());
+        routeInformationParser: appRouter.defaultRouteParser(),
+        routerDelegate: appRouter.delegate());
   }
 }

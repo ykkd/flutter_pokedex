@@ -12,7 +12,7 @@ class HomeViewModel extends ChangeNotifier {
 
   final Reader _reader;
   late final GetPokemonListViewUseCase _getPokemonListViewUseCase =
-      _reader(getPokemonListViewUseCase);
+      _reader(getPokemonListViewUseCaseProvider);
 
   PokemonListView? _pokemonListView;
 
