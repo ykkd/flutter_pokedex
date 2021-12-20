@@ -1,6 +1,5 @@
 import 'package:pokedex/data/remote/response/pokemon_detail_response.dart';
 import 'package:pokedex/model/model/ability.dart';
-import 'package:pokedex/model/model/stat.dart';
 import 'package:pokedex/model/model/type.dart';
 
 class PokemonDetailView {
@@ -13,12 +12,6 @@ class PokemonDetailView {
   Ability ability1;
   Ability? ability2;
   Ability? hiddenAbility;
-  Hp hp;
-  Attack attack;
-  Defense defense;
-  SpecialAttack specialAttack;
-  SpecialDefense specialDefense;
-  Speed speed;
 
   PokemonDetailView(
       {required this.id,
@@ -29,13 +22,7 @@ class PokemonDetailView {
       required this.type2,
       required this.ability1,
       required this.ability2,
-      required this.hiddenAbility,
-      required this.hp,
-      required this.attack,
-      required this.defense,
-      required this.specialAttack,
-      required this.specialDefense,
-      required this.speed});
+      required this.hiddenAbility});
 
   factory PokemonDetailView.transform(
       PokemonDetailResponse pokemonDetailResponse) {
@@ -49,14 +36,11 @@ class PokemonDetailView {
         ability1: Ability.transform(pokemonDetailResponse.abilities[0]),
         ability2: Ability.transform(pokemonDetailResponse.abilities[1]),
         hiddenAbility: Ability.transform(pokemonDetailResponse.abilities
-            .firstWhere((element) => element.isHidden)),
-        hp: Hp(pokemonDetailResponse.hp.baseState),
-        attack: Attack(pokemonDetailResponse.attack.baseState),
-        defense: Defense(pokemonDetailResponse.defense.baseState),
-        specialAttack:
-            SpecialAttack(pokemonDetailResponse.specialAttack.baseState),
-        specialDefense:
-            SpecialDefense(pokemonDetailResponse.specialDefense.baseState),
-        speed: Speed(pokemonDetailResponse.speed.baseState));
+            .firstWhere((element) => element.isHidden)));
   }
+
+  String get imageUrl =>
+      "https://github.com/fanzeyi/pokemon.json/blob/master/images/" +
+      id.toString().padLeft(3, '0') +
+      ".png?raw=true";
 }

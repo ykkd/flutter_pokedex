@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pokedex/data/remote/response/stat_response.dart';
 import 'package:pokedex/data/remote/response/type_response.dart';
+import 'package:pokedex/model/model/pokemon.dart';
 
 import 'ability_response.dart';
 
@@ -18,6 +19,11 @@ class PokemonDetailResponse {
 
   PokemonDetailResponse(this.abilities, this.height, this.weight, this.id,
       this.name, this.stats, this.types);
+
+  factory PokemonDetailResponse.fromJson(Map<String, dynamic> json) =>
+      _$PokemonDetailResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PokemonDetailResponseToJson(this);
 
   StatResponse get hp =>
       stats.firstWhere((element) => element.stat.name == 'hp');
