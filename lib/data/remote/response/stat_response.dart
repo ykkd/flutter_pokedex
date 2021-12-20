@@ -5,11 +5,11 @@ part 'stat_response.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class StatResponse {
-  int baseState;
+  int baseStat;
   int effort;
   StatXResponse stat;
 
-  StatResponse(this.baseState, this.effort, this.stat);
+  StatResponse(this.baseStat, this.effort, this.stat);
 
   factory StatResponse.fromJson(Map<String, dynamic> json) =>
       _$StatResponseFromJson(json);
