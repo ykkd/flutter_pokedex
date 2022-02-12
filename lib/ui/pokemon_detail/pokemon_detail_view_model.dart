@@ -25,8 +25,6 @@ class PokemonDetailViewModel extends ChangeNotifier {
       }, failure: (error) {
         Logger().e(error.message);
       });
-    }).whenComplete(() {
-      notifyListeners();
-    });
+    }).whenComplete(notifyListeners);
   }
 }

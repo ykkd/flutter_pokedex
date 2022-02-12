@@ -32,7 +32,7 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<PokemonDetailResponse> pokemonDetail(id) async {
+  Future<PokemonDetailResponse> pokemonDetail(int id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -40,7 +40,7 @@ class _ApiClient implements ApiClient {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PokemonDetailResponse>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'pokemon/${id}',
+                .compose(_dio.options, 'pokemon/$id',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = PokemonDetailResponse.fromJson(_result.data!);

@@ -40,7 +40,5 @@ class PokemonDetailView {
   }
 
   String get imageUrl =>
-      "https://github.com/fanzeyi/pokemon.json/blob/master/images/" +
-      id.toString().padLeft(3, '0') +
-      ".png?raw=true";
+      "https://github.com/fanzeyi/pokemon.json/blob/master/images/${id.toString().padLeft(3, '0')}.png?raw=true";
 }

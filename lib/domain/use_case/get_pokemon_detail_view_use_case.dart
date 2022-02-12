@@ -2,7 +2,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pokedex/data/remote/response/result.dart';
 import 'package:pokedex/data/repository/pokemon_detail_view_repository.dart';
 import 'package:pokedex/model/view/pokemon_detail_view.dart';
-import 'package:logger/logger.dart';
 
 final getPokemonDetailViewUseCaseProvider =
     Provider((ref) => GetPokemonDetailViewUseCaseImpl(ref.read));

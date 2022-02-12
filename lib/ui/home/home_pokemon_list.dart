@@ -37,7 +37,7 @@ class PokemonListItem extends HookConsumerWidget {
 
     return InkWell(
       onTap: () {
-        Logger().d("onTap: PokemonListItem");
+        Logger().d('onTap: PokemonListItem');
         router.push(PokemonDetailPageRoute(id: pokemon.id));
       },
       child: Container(
@@ -60,7 +60,7 @@ class PokemonListItem extends HookConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "No." + pokemon.id.toString(),
+                      'No.${pokemon.id}',
                       style: const TextStyle(fontSize: 12),
                     ),
                     Text(

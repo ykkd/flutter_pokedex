@@ -11,10 +11,8 @@ class Pokemon {
   }
 
   int get id => int.parse(url.substring(
-      "https://pokeapi.co/api/v2/pokemon/".length, url.length - 1));
+      'https://pokeapi.co/api/v2/pokemon/'.length, url.length - 1));
 
   String get thumbnailImageUrl =>
-      "https://github.com/fanzeyi/pokemon.json/blob/master/thumbnails/" +
-      id.toString().padLeft(3, '0') +
-      ".png?raw=true";
+      'https://github.com/fanzeyi/pokemon.json/blob/master/thumbnails/${id.toString().padLeft(3, '0')}.png?raw=true';
 }
