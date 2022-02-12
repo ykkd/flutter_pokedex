@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pokedex/data/remote/response/stat_response.dart';
 import 'package:pokedex/data/remote/response/type_response.dart';
-import 'package:pokedex/model/model/pokemon.dart';
 
 import 'ability_response.dart';
 
